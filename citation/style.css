@@ -1,0 +1,346 @@
+#menuDebut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  max-width: 450px; /* Largeur de la boîte de menu */
+  margin: 50px auto; /* Centre horizontalement avec de l'espace en haut */
+  padding: 40px 30px;
+  
+  /* Fond effet "Verre" (assorti à la future div citation) */
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Bordure et coins arrondis */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Ombre portée douce pour donner du relief */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  /* Animation d'apparition fluide au chargement */
+  animation: fadeInMenu 0.6s ease-out;
+}
+
+/* 2. Le titre à l'intérieur du menu (ex: "Bienvenue / Nom du jeu") */
+#menuDebut h1 {
+  font-family: 'Segoe UI', sans-serif;
+  color: #8a2626;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* 3. Espacement automatique pour les éléments enfants du menu */
+#menuDebut > * {
+  margin-bottom: 20px;
+}
+
+/* On retire la marge sur le tout dernier élément (le bouton valider) */
+#menuDebut > *:last-child {
+  margin-bottom: 0;
+}
+
+/* 4. Animation d'entrée */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#div_citation {
+  /* 1. Dimensions et centrage */
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px 35px;
+  
+  /* 2. Fond effet "Verre Fumé" (Glow & Glassmorphism) */
+  background: rgba(20, 20, 35, 0.65); /* Fond sombre transparent */
+  backdrop-filter: blur(8px); /* Floute ce qu'il y a derrière pour le style */
+  
+  /* 3. Bordures et angles */
+  border-radius: 12px;
+  border: 2px solid #6c5ce7; /* Bordure violette assortie à tes boutons */
+  
+  /* 4. Effets de lumière */
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 15px rgba(108, 92, 231, 0.2); /* Halo violet discret autour */
+    
+  /* 5. Style du texte à l'intérieur */
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+  
+  /* Petite transition fluide au cas où elle apparaît */
+  transition: all 0.4s ease-in-out;
+}
+.game-pseudo-style {
+  font-family: Impact, sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  
+  /* Une petite ombre noire pour détacher le texte du fond */
+  text-shadow: 2px 2px 0px #000;
+}
+
+/* --- Style du Score juste en dessous --- */
+.game-score-style {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffb703; /* Un joli jaune orangé pour le score */
+  letter-spacing: 1px;
+  margin-top: 0;
+  
+  /* Effet légèrement lumineux */
+  text-shadow: 0 0 5px rgba(255, 183, 3, 0.4);
+}
+.jeu_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px; /* <- Corrigé ici (pas d'espace) */
+}
+
+.colonne_boutons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1 { 
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.A {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.B {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#textPseudo {
+  /* 1. Taille et espacement interne */
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 20px;
+  
+  /* 2. Police et texte */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  
+  /* 3. Bordures et arrondis */
+  border: 2px solid #e0e0e0;
+  border-radius: 8px; 
+  
+  /* 4. Fond et ombre discrète */
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); 
+  
+  /* 5. Transition fluide pour les effets au clic */
+  transition: all 0.3s ease-in-out;
+  outline: none; 
+}
+
+/* --- EFFET AU CLIC (FOCUS) --- */
+#textPseudo:focus {
+  border-color: #6c5ce7; 
+  background-color: #ffffff; 
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3); 
+  transform: translateY(-1px);
+}
+
+/* --- STYLE DU PLACEHOLDER --- */
+#textPseudo::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+#button_valider {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  padding: 12px 24px; 
+  border-radius: 8px; 
+  
+  border: none;
+  background-color: #6c5ce7; 
+  color: white;
+  font-weight: 600;
+  
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+#button_valider:hover {
+  background-color: #5b4cc4;
+  transform: translateY(-1px);
+}
+
+#button_valider:active {
+  transform: translateY(1px);
+}
+
+/* --- STYLE GAME OVER RETRO --- */
+#gameover_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(100, 0, 0, 0.95) 0%, rgba(10, 0, 0, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 2. Le titre GAME OVER : Effet 3D "Sang & Relief" */
+#gameover_title {
+  font-family: Impact, sans-serif;
+  font-size: 7rem;
+  color: #ff0000; /* Rouge pur */
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  margin: 0;
+  
+  /* Superposition d'ombres pour l'effet 3D massif et sombre */
+  text-shadow: 
+    0 1px 0 #880000, 
+    0 2px 0 #770000, 
+    0 3px 0 #660000, 
+    0 4px 0 #550000, 
+    0 5px 0 #440000, 
+    0 6px 1px rgba(0,0,0,0.5), 
+    0 10px 10px rgba(0,0,0,0.4), 
+    0 20px 20px rgba(0,0,0,0.3),
+    0 0 40px rgba(255, 0, 0, 0.4);
+
+  /* Animation de vibration (glitch) pour le côté dramatique */
+  animation: gameover-shake 0.2s ease-in-out infinite alternate;
+}
+
+/* 3. La bannière du perdant (Style E-Sport Sanglant) */
+.looser-banner {
+  font-family: Impact, sans-serif;
+  font-size: 2.2rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 35px;
+  
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 45px;
+  border-radius: 8px; /* Angles plus secs pour le game over */
+  border: 2px solid #ff0000; /* Bordure rouge vive */
+  
+  /* Halo rouge autour de la bannière */
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+}
+
+/* 4. Animation de vibration */
+@keyframes gameover-shake {
+  from { transform: translate(1px, 1px) rotate(0deg); }
+  to { transform: translate(-1px, -1px) rotate(-0.5deg); }
+}
+#victory_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Un beau dégradé radial qui part d'un vert émeraude au centre vers un noir profond */
+  background: radial-gradient(circle, rgba(0, 80, 30, 0.95) 0%, rgba(0, 15, 5, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Passe au-dessus de tout le reste du jeu */
+}
+
+/* 2. Le titre "VICTOIRE !" (Effet Or Massif 3D) */
+#victory_title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 7rem;
+  color: #FFD700; /* Couleur Or */
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+  
+  /* Superposition d'ombres décalées d'un pixel pour créer l'effet 3D relief */
+  text-shadow: 
+    0 1px 0 #ccae00, 
+    0 2px 0 #b29800, 
+    0 3px 0 #998200, 
+    0 4px 0 #806d00, 
+    0 5px 0 #665700, 
+    0 6px 1px rgba(0,0,0,.1), 
+    0 1px 3px rgba(0,0,0,.3), 
+    0 5px 10px rgba(0,0,0,.25), 
+    0 10px 10px rgba(0,0,0,.2), 
+    0 20px 20px rgba(0,0,0,.15),
+    0 0 30px rgba(255, 215, 0, 0.6); /* Halo lumineux doré */
+    
+  /* Petite animation pour faire vibrer le titre */
+  animation: win-jump 0.5s ease-in-out infinite alternate;
+}
+
+/* 3. Le texte du gagnant (Style Bannière E-Sport) */
+#victory_overlay .winner-text {
+  font-family: Impact, sans-serif;
+  font-size: 2.2rem;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 35px;
+  
+  /* L'encadré noir transparent autour du texte */
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 40px;
+  border-radius: 50px; /* Donne une forme de pilule moderne */
+  border: 2px solid #39ff14; /* Bordure vert fluo/cyberpunk */
+  
+  /* Halo lumineux vert autour de la bannière du joueur */
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.5); 
+}
+
+/* 4. L'animation de pulsation pour le titre */
+@keyframes win-jump {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
